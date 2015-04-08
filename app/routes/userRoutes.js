@@ -4,7 +4,9 @@ exports.postUsers = function(req, res){
 
 	var user = new User();
 
-	user.name = req.body.name;
+	user.firstName = req.body.firstName;
+	user.lastName = req.body.lastName;
+	user.dateofBirth = req.body.dateofBirth;
 	user.username = req.body.username;
 	user.password = req.body.password;
 
