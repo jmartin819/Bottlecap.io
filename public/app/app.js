@@ -16,6 +16,10 @@ angular.module('mainApp', [
   $resourceProvider.defaults.stripTrailingSlashes = false;
 }])
 
+.controller('profileController', function(){
+  var vm = this;
+})
+
 //new user controller
 .controller('newUserController', function(userFactory){
   var vm = this;

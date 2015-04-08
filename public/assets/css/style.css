@@ -67,3 +67,8 @@ html, body {
 	display: table-cell;
 	margin: auto;
 }
+
+#newUserContainer, #loginContainer {
+	margin-top: 150px;
+	padding-top: 15px;
+}
