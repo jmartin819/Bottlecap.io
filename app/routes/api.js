@@ -4,8 +4,10 @@ var config = require('../../config');
 var superSecret = config.secret;
 
 var User = require('../models/user');
+var Bottlecap = require('../models/bottlecap')
 
 var userRoutes = require('./userRoutes');
+var capRoutes =  require('./capRoutes');
 
 module.exports = function(app, express) {
 	var apiRouter = express.Router();
@@ -44,7 +46,7 @@ module.exports = function(app, express) {
 				//if user is found and password is right
 				//create token
 				var token = jwt.sign({
-					name: user.name,
+					name: user.firstName,
 					username: user.username
 				}, superSecret, {
 					expiresInMinutes: 1440 //24 hours
@@ -62,7 +64,7 @@ module.exports = function(app, express) {
 
 
 	//middleware to use for all requests
-	apiRouter.use(function(req, res, next){
+/*	apiRouter.use(function(req, res, next){
 		//do logging
 		console.log('API middleware');
 
@@ -93,12 +95,16 @@ module.exports = function(app, express) {
 		//more middle ware
 		//next();
 	});
-
+*/
 	// more routes for our API will happen here
 
 	apiRouter.route('/users')
 		//.post(userRoutes.postUsers)
 		.get(userRoutes.getUsers);
+
+	apiRouter.route('/bottlecaps')
+		.get(capRoutes.getBottlecaps)
+		.post(capRoutes.postBottlecap);
 
 	apiRouter.route('/me').get(function(req,res){
 		res.send(req.decoded);

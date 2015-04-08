@@ -34,7 +34,7 @@ angular.module('app.routes', ['ngRoute'])
         })
 
         .when('/', {
-            templateUrl: '../views/cover.html',
+            templateUrl: '../views/home.html',
             controller : 'mainController',
             controllerAs : 'cover'
         });
