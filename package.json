@@ -7,6 +7,6 @@
     "express": "~4.10.3",
     "jsonwebtoken": "^3.2.2",
     "mongoose": "~3.8.19",
-    "morgan": "~1.5.0",
+    "morgan": "~1.5.0"
   }
 }
