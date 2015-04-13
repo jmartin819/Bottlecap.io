@@ -99,3 +99,8 @@ html, body {
 	height: 160px;
 	/*background-color: white; */
 }
+
+#newUserContainer, #loginContainer {
+	margin-top: 150px;
+	padding-top: 15px;
+}

@@ -27,6 +27,12 @@ angular.module('app.routes', ['ngRoute'])
             controllerAs: 'newUser'
         })
 
+        .when('/profile', {
+            templateUrl: '../views/profile.html',
+            controller: 'profileController',
+            controllerAs: 'profile'
+        })
+
         .when('/login', {
             templateUrl: '../views/login.html',
             controller : 'mainController',

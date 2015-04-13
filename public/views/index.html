@@ -63,21 +63,12 @@
 			<!-- Navbar-->
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="/home"><i class="fa fa-user"></i> Profile </a></li>
-								<!--<li ng-if="main.loggedIn"><a href="/getTags"><i class="fa fa-spinner fa-spin"></i> Get Tags </a></li>
-								<li ng-if="main.loggedIn"><a href="/postTags"><i class="fa fa-cog fa-spin"></i> Post new Tags </a></li>-->
-							
+					<li><a href="/profile"><i class="fa fa-user"></i> Profile </a></li>		
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li ng-if="!main.loggedIn">
-						<a href="/login"><i class="fa fa-user"></i> Sign In</a>
-					</li>
-					<li ng-if="!main.loggedIn">
-						<a href="/newUser"><i class="fa fa-user"></i> New User</a>
-					</li>
-					<li ng-if="main.loggedIn">
-						<a href="#" ng-click="main.doLogout()"><i class="fa fa-sign-out"></i>Logout</a>
-					</li>
+					<li ng-if="!main.loggedIn"><a href="/login"><i class="fa fa-user"></i> Sign In</a></li>
+					<li ng-if="!main.loggedIn"><a href="/newUser"><i class="fa fa-user"></i> New User</a></li>
+					<li ng-if="main.loggedIn"><a href="#" ng-click="main.doLogout()"><i class="fa fa-sign-out"></i>Logout</a></li>
 				</ul>	
 			</div>
 		</nav>	 
