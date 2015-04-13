@@ -30,6 +30,25 @@ angular.module('mainApp', [
   }
 })
 
+.controller('tempprofileController', function(Auth, $location, $routeParams, userFactory){
+  var vm = this;
+
+  vm.profileCheck = Auth.isLoggedIn();
+  console.log(vm.profileCheck);
+  if (!vm.profileCheck)
+  {
+    $location.path('/login');
+  }
+  else {
+    userFactory.get($routeParams.user_username)
+    .success(function(data){
+      vm.user = data;
+
+      console.log(vm.user);
+    });
+  }
+})
+
 //new user controller
 .controller('newUserController', function(userFactory){
   var vm = this;

@@ -106,6 +106,9 @@ module.exports = function(app, express) {
 		.get(capRoutes.getBottlecaps)
 		.post(capRoutes.postBottlecap);
 
+	apiRouter.route('/users/:user_username')
+		.get(userRoutes.getOneUser);
+
 	apiRouter.route('/me').get(function(req,res){
 		res.send(req.decoded);
 	});

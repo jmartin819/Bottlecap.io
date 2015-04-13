@@ -33,6 +33,12 @@ angular.module('app.routes', ['ngRoute'])
             controllerAs: 'profile'
         })
 
+        .when('/profile/:user_username', {
+            templateUrl: '../views/tempprofile.html',
+            controller: 'tempprofileController',
+            controllerAs: 'tempprofile'
+        })
+
         .when('/login', {
             templateUrl: '../views/login.html',
             controller : 'mainController',

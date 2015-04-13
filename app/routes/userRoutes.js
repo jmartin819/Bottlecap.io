@@ -30,3 +30,11 @@ exports.getUsers = function(req, res){
 		res.json(users);
 		});
 };
+
+exports.getOneUser = function(req,res){
+	User.findOne({username: req.params.user_username}, function(err, user){
+		if (err) return res.send(err);
+
+		res.json(user);
+	});
+};

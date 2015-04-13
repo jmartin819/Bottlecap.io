@@ -16,6 +16,10 @@ angular.module('userService', [])
 		return $http.post('/api/users', userData);
 	};
 
+	localUserFactory.get = function(username){
+		return $http.get('/api/users/' + username);
+	};
+
 	return localUserFactory;
 
 });
