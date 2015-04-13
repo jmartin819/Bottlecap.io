@@ -15,28 +15,22 @@ angular.module('app.routes', ['ngRoute'])
             controllerAs: 'main'
         })
 
-        /*.when('/home/:patient_id', {
-            templateUrl: '../views/singlePatient.html',
-            controller: 'SPController',
-            controllerAs: 'singlePatient'
-        })*/
-
         .when('/newUser', {
             templateUrl: '../views/newUser.html',
             controller: 'newUserController',
             controllerAs: 'newUser'
         })
 
-        .when('/profile', {
+        /*.when('/profile', {
             templateUrl: '../views/profile.html',
             controller: 'profileController',
             controllerAs: 'profile'
-        })
+        })*/
 
         .when('/profile/:user_username', {
-            templateUrl: '../views/tempprofile.html',
-            controller: 'tempprofileController',
-            controllerAs: 'tempprofile'
+            templateUrl: '../views/profile.html',
+            controller: 'profileController',
+            controllerAs: 'profile'
         })
 
         .when('/login', {

@@ -1,18 +1,17 @@
-<div class="belowNav container">
-  <h1>User: -----USER HERE-----</h1>
+<div class="belowNav container" ng-cloak>
+  <h1>User: {{profile.user.username}}</h1>
 
   <h3> User Info: </h3>
   <div>
     <table class="table borderless">
       <tbody>
-        <tr><td>Name: user.firstName + user.Lastname</td></tr>
-        <tr><td>Birthday: user.dateofBirth (IF LOGGED IN)</td></tr>
-        <tr><td>Username: user.username</td></tr>
+        <tr><td>Name: {{profile.user.firstName}} {{profile.user.lastName}}</td></tr>
+        <tr><td>Birthday: {{profile.user.dateofBirth}}</td></tr>
       </tbody>
     </table>
   </div>
 
-  <h3> User's Comments: </h3>
+  <h3> {{profile.user.username}}'s Comments: </h3>
   <div>
     <table class="table borderless">
       <thead>
@@ -34,32 +33,29 @@
     </table>
   </div>
 
-  <h3> User's Likes: </h3>
+  <h3> {{profile.user.username}}'s Likes: </h3>
   <div>
     <table class="table borderless">
       <thead>
         <tr>
           <th>Beer</th>
           <th>Color</th>
-          <th>Availability</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>Budweiser</td>
           <td>Red</td>
-          <td>Almost Everywhere</td>
         </tr>
         <tr>
           <td>Bud Light</td>
           <td>Blue</td>
-          <td>Almost Everywhere</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <h3> User Follows: </h3>
+  <h3> {{profile.user.username}}'s Follows: </h3>
   <div>
     <table class="table borderless">
       <tbody>
