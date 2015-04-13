@@ -1,4 +1,7 @@
 <div class="belowNav">
+  <div class="mainLogo">
+    <img src="../assets/img/logo_main_edit.png"/>
+  </div>
   <div class="col-lg-6 mainSearch">
     <div class="input-group">
       <input type="text" class="form-control" placeholder="Search for...">
@@ -8,8 +11,15 @@
     </div><!-- /input-group -->
   </div><!-- /.col-lg-6 -->
 
-  <br><br><br><br><br>
-  <p>
-  	COMING SOON:
-  </p>
+  <div class="col-sm-12 bottlecapShowcase">
+  <h1>Some Bottlecaps</h1>
+    <div ng-repeat="(key, capData) in main.bottlecapsList" class="col-sm-2 bottlecapCircleContainer">
+    <a ng-href="/caps/{{capData._id}}" style="display: block;">
+      <h4 ng-style="main.setCapColor(capData)" >{{capData.beername}}</h4>
+      <div class="bottlecapCircle" ng-style="{'background-color': 'white'}" >
+      </div>
+    </a>
+    </div>
+  </div>
+
 </div>
