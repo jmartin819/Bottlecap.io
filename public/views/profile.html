@@ -59,9 +59,7 @@
   <div>
     <table class="table borderless">
       <tbody>
-        <tr><td>User12345</td></tr>
-        <tr><td>User35793</td></tr>
-        <tr><td>User98764</td></tr>
+        <tr ng-repeat="user in profile.user.follows"><td>{{user}}</td></tr>
       </tbody>
     </table>
   </div>
