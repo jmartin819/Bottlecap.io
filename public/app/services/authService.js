@@ -78,7 +78,6 @@ angular.module('authService', [])
 	};
 
 	return authTokenFactory;
-
 })
 
 // ===================================================

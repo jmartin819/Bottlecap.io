@@ -31,15 +31,17 @@ app.use(function(req, res, next) {
 app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
 
-
 // ROUTES FOR OUR API
 // =============================
 // get an instance of the express router
+//var publicRouter = require('./app/routes/publicRouter')(app, express);
+
 var apiRouter = require('./app/routes/api')(app, express);
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
 app.use('/api', apiRouter);
+//app.use('/api', publicRouter);
 
 //app.get('/404', function(req, res){
 //	res.sendFile(path.join(__dirname + '/public/views/404.html'));

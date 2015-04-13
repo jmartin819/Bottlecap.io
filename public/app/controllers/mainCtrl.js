@@ -38,11 +38,11 @@ angular.module('mainCtrl', [
 	//console.log(vm.bottlecapsList);
 
 	vm.setCapColor = function(color){
-		console.log("call to set color");
+		//console.log("call to set color");
 		//console.log(color);
 
 		vm.bgColor = "#" + color.avgColor;
-		console.log(vm.bgColor);
+		//console.log(vm.bgColor);
 
 		var returnColor = { color: "#" + color.avgColor };
 

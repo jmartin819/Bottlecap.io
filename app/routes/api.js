@@ -13,6 +13,8 @@ module.exports = function(app, express) {
 	var apiRouter = express.Router();
 
 	apiRouter.post('/users', userRoutes.postUsers);
+	apiRouter.route('/bottlecaps')
+		.get(capRoutes.getBottlecaps);
 
 	apiRouter.post('/authenticate', function(req, res){
 
@@ -62,9 +64,8 @@ module.exports = function(app, express) {
 	});
 });
 
-
 	//middleware to use for all requests
-/*	apiRouter.use(function(req, res, next){
+apiRouter.use(function(req, res, next){
 		//do logging
 		console.log('API middleware');
 
@@ -95,15 +96,15 @@ module.exports = function(app, express) {
 		//more middle ware
 		//next();
 	});
-*/
 	// more routes for our API will happen here
 
 	apiRouter.route('/users')
 		//.post(userRoutes.postUsers)
 		.get(userRoutes.getUsers);
 
+	
 	apiRouter.route('/bottlecaps')
-		.get(capRoutes.getBottlecaps)
+		//.get(capRoutes.getBottlecaps)
 		.post(capRoutes.postBottlecap);
 
 	apiRouter.route('/users/:user_username')
