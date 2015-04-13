@@ -16,8 +16,18 @@ angular.module('mainApp', [
   $resourceProvider.defaults.stripTrailingSlashes = false;
 }])
 
-.controller('profileController', function(){
+.controller('profileController', function(Auth, $location){
   var vm = this;
+  vm.profileCheck = Auth.isLoggedIn();
+  console.log(vm.profileCheck);
+  if (!vm.profileCheck)
+  {
+    $location.path('/login');
+  }
+  else {
+    vm.me = Auth.getUser();
+    console.log(vm.me.firstName);
+  }
 })
 
 //new user controller
