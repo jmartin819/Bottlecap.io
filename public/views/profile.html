@@ -50,14 +50,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Budweiser</td>
-          <td>Red</td>
-        </tr>
-        <tr>
-          <td>Bud Light</td>
-          <td>Blue</td>
-        </tr>
+        <tr ng-repeat="cap in profile.user.capLikes"><td><a ng-href="/caps/{{cap}}">{{cap}}</a></td><td>color here</td></tr>
       </tbody>
     </table>
   </div>

@@ -28,16 +28,12 @@ angular.module('mainApp', [
     });
 
   vm.addFollower = function(curUser, username){
-    console.log(curUser);
-    console.log(username);
     vm.currentUser = curUser;
     vm.followedUser = username;
 
     userFactory.addFollower(vm.currentUser, vm.followedUser)
     .success(function(data){
       vm.returndata = data;
-      console.log(vm.returndata);
-      console.log("worked....?");
     });
   }
 })
@@ -64,7 +60,7 @@ angular.module('mainApp', [
   }
 })
 
-.controller('capDetailController', function($routeParams, capsFactory){
+.controller('capDetailController', function($routeParams, capsFactory, userFactory){
 
   var vm = this;
 
@@ -76,8 +72,13 @@ angular.module('mainApp', [
     });
 
   vm.likeCap = function(curUser, cap_id){
-    console.log("curUser: " + curUser);
-    console.log("cap id: " + cap_id);
+    vm.currentUser = curUser;
+    vm.likedCap = cap_id;
+
+    userFactory.likeCap(vm.currentUser, vm.likedCap)
+    .success(function(data){
+      vm.returndata = data;
+    });
   }
   
 });

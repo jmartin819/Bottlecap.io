@@ -40,53 +40,54 @@ exports.getOneUser = function(req,res){
 };
 
 exports.addFollower = function(req, res){
-	console.log("in userRoutes");
 	User.findOne({username: req.params.user_username}, function(err,user){
 		if (err) return res.send(err);
 
 		var alreadyFollowed = false;
-
-		console.log("user follows: " + user.follows);
+		var alreadyLiked = false;
 
 		for (var i=0; i<user.follows.length; i++)
 		{
-			console.log("userfollows: " + user.follows[i]);
 			if (user.follows[i] == req.body.username)
 			{
-				console.log("found");
 				alreadyFollowed = true;
 			}
 		}
 
+		for (var i=0; i<user.capLikes.length; i++)
+		{
+			if (user.capLikes[i] == req.body.cap_id)
+			{
+				alreadyLiked = true;
+			}
+		}
+
+		if (req.body.username == null)
+		{
+			alreadyFollowed = true;
+		}
+		if (req.body.cap_id == null)
+		{
+			alreadyLiked = true;
+		}
+
+		console.log("alreadyFollowed: " + alreadyFollowed);
+		console.log("alreadyLiked: " + alreadyLiked);
+
 		if (alreadyFollowed == false)
 		{
 			user.follows.push(req.body.username);
-
-			console.log(user.follows);
-
-			user.save(function(err) {
-			if(err)	return res.send(err);
-			})
-
-			res.json({ message: 'Follower added!' });
 		}
-		else
+		if (alreadyLiked == false)
 		{
-			res.json({ message: 'User already being followed!' });
+			user.capLikes.push(req.body.cap_id);
 		}
+
+		user.save(function(err) {
+		if(err)	return res.send(err);
+		})
+
+		res.json({ message: 'Change saved!' });
 
 	});
 };
-
-
-	/*user.save(function(err) {
-		if(err) {
-			if(err.code == 11000)
-				return res.json({ success: false, message: 'A user with that username already exists. '});
-			else
-				return res.send(err);
-		}
-
-		res.json({ message: 'Follower added!' });
-	});
-};*/

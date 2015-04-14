@@ -10,7 +10,8 @@ var UserSchema = new Schema({
 	dateofBirth: { type: String, required: true},
 	username: { type: String, required: true, index: { unique: true }},
 	password: { type: String, required: true, select: false },
-	follows: []
+	follows: [],
+	capLikes: []
 });
 
 // hash the password before the user is saved
