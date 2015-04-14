@@ -60,4 +60,10 @@ angular.module('mainApp', [
 
       console.log(vm.bottlecap);
     });
+
+  vm.likeCap = function(curUser, cap_id){
+    console.log("curUser: " + curUser);
+    console.log("cap id: " + cap_id);
+  }
+  
 });

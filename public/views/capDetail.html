@@ -23,9 +23,16 @@
     </div><!-- /input-group -->
   </div><!-- /.col-lg- -->
 
-  <div id="singleCapPanel" class="panel panel-default" style="margin-top: 200px;">
+  <div id="singleCapPanel" class="panel panel-default">
 
-  {{cap.bottlecap}}
+  <h1>{{cap.bottlecap.beername}}</h1>
+  <h4>{{cap.bottlecap.beerdate}}</h4>
+  <h4>{{cap.bottlecap.avgColor}}</h4>
+  <div>
+    <button ng-click="cap.likeCap(main.user.username, cap.bottlecap._id)" class="btn btn-default">
+      <span>Like (y)</span>
+    </button>
+  </div>
 
   </div>
 
