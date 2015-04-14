@@ -44,17 +44,36 @@ exports.addFollower = function(req, res){
 	User.findOne({username: req.params.user_username}, function(err,user){
 		if (err) return res.send(err);
 
-		console.log(user.follows);
+		var alreadyFollowed = false;
 
-		user.follows.push(req.body.username);
+		console.log("user follows: " + user.follows);
 
-		console.log(user.follows);
+		for (var i=0; i<user.follows.length; i++)
+		{
+			console.log("userfollows: " + user.follows[i]);
+			if (user.follows[i] == req.body.username)
+			{
+				console.log("found");
+				alreadyFollowed = true;
+			}
+		}
 
-		user.save(function(err) {
-		if(err)	return res.send(err);
-		})
+		if (alreadyFollowed == false)
+		{
+			user.follows.push(req.body.username);
 
-		res.json({ message: 'Follower added!' });
+			console.log(user.follows);
+
+			user.save(function(err) {
+			if(err)	return res.send(err);
+			})
+
+			res.json({ message: 'Follower added!' });
+		}
+		else
+		{
+			res.json({ message: 'User already being followed!' });
+		}
 
 	});
 };
