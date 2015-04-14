@@ -23,8 +23,6 @@ angular.module('mainApp', [
     userFactory.get($routeParams.user_username)
     .success(function(data){
       vm.user = data;
-
-      console.log(vm.user);
     });
 
   vm.addFollower = function(curUser, username){

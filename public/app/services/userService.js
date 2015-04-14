@@ -22,12 +22,12 @@ angular.module('userService', [])
 
 	localUserFactory.addFollower = function(curUser, username){
 		username = {username: username};
-		return $http.put('/api/users/' + curUser, username);
+		return $http.put('/api/users/' + curUser + '/addFollower', username);
 	};
 
 	localUserFactory.likeCap = function(curUser, cap_id){
 		cap_id = {cap_id: cap_id};
-		return $http.put('/api/users/' + curUser, cap_id);
+		return $http.put('/api/users/' + curUser + '/likeCap', cap_id);
 	};
 
 	return localUserFactory;

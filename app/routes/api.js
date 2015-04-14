@@ -110,9 +110,13 @@ apiRouter.use(function(req, res, next){
 		.post(capRoutes.postBottlecap);
 
 	apiRouter.route('/users/:user_username')
-		.get(userRoutes.getOneUser)
-	//apiRouter.route('/users/:user_username')
+		.get(userRoutes.getOneUser);
+
+	apiRouter.route('/users/:user_username/addFollower')
 		.put(userRoutes.addFollower);
+
+	apiRouter.route('/users/:user_username/likeCap')
+		.put(userRoutes.likeCap);
 
 	apiRouter.route('/me').get(function(req,res){
 		res.send(req.decoded);
