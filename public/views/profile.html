@@ -1,7 +1,14 @@
 <div class="belowNav container" ng-cloak>
   <h1>User: {{profile.user.username}}</h1>
 
+  <div>
+    <button ng-click="profile.addFollower(main.user.username, profile.user.username)" class="btn btn-default">
+      <span>Follow</span>
+    </button>
+  </div>
+
   <h3> User Info: </h3>
+
   <div>
     <table class="table borderless">
       <tbody>
@@ -59,7 +66,7 @@
   <div>
     <table class="table borderless">
       <tbody>
-        <tr ng-repeat="user in profile.user.follows"><td>{{user}}</td></tr>
+        <tr ng-repeat="user in profile.user.follows"><td><a ng-href="/profile/{{user}}">{{user}}</a></td></tr>
       </tbody>
     </table>
   </div>

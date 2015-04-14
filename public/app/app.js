@@ -26,6 +26,20 @@ angular.module('mainApp', [
 
       console.log(vm.user);
     });
+
+  vm.addFollower = function(curUser, username){
+    console.log(curUser);
+    console.log(username);
+    vm.currentUser = curUser;
+    vm.followedUser = username;
+
+    userFactory.addFollower(vm.currentUser, vm.followedUser)
+    .success(function(data){
+      vm.returndata = data;
+      console.log(vm.returndata);
+      console.log("worked....?");
+    });
+  }
 })
 
 //new user controller
