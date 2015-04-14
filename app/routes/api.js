@@ -110,7 +110,9 @@ apiRouter.use(function(req, res, next){
 		.post(capRoutes.postBottlecap);
 
 	apiRouter.route('/users/:user_username')
-		.get(userRoutes.getOneUser);
+		.get(userRoutes.getOneUser)
+	//apiRouter.route('/users/:user_username')
+		.put(userRoutes.addFollower);
 
 	apiRouter.route('/me').get(function(req,res){
 		res.send(req.decoded);

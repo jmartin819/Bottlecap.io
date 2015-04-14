@@ -63,7 +63,7 @@ angular.module('mainCtrl', [
 					vm.processing = false;
 
 					if(data.success)
-						$location.path('/home');
+						$location.path('/');
 					else
 						vm.error = data.message;
 				});

@@ -38,3 +38,36 @@ exports.getOneUser = function(req,res){
 		res.json(user);
 	});
 };
+
+exports.addFollower = function(req, res){
+	console.log("in userRoutes");
+	User.findOne({username: req.params.user_username}, function(err,user){
+		if (err) return res.send(err);
+
+		console.log(user.follows);
+
+		user.follows.push(req.body.username);
+
+		console.log(user.follows);
+
+		user.save(function(err) {
+		if(err)	return res.send(err);
+		})
+
+		res.json({ message: 'Follower added!' });
+
+	});
+};
+
+
+	/*user.save(function(err) {
+		if(err) {
+			if(err.code == 11000)
+				return res.json({ success: false, message: 'A user with that username already exists. '});
+			else
+				return res.send(err);
+		}
+
+		res.json({ message: 'Follower added!' });
+	});
+};*/
