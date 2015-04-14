@@ -10,6 +10,10 @@ angular.module('capsService', [])
 		return $http.get('/api/bottlecaps');
 	};
 
+	localCapsFactory.getOneCap = function(cap_id){
+		return $http.get('/api/bottlecaps/' + cap_id);
+	};
+
 	//create new tag entry
 	localCapsFactory.create = function(capsData){
 		return $http.post('/api/bottlecaps', capsData);

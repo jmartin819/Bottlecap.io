@@ -21,6 +21,13 @@ exports.postBottlecap = function(req, res){
 	});
 };
 
+exports.getOneCap = function(req, res){
+	Bottlecap.findById(req.params.cap_id, function(err, bottlecaps){
+		if(err) return res.send(err);
+
+		res.json(bottlecaps);
+	})
+};
 exports.getBottlecaps = function(req, res){
 
 	Bottlecap.find(function(err, bottlecaps){

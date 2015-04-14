@@ -14,11 +14,10 @@ body {
 	/* background: linear-gradient(180deg,#B2EEFC 0%,#44c7f4 100%); */
 	
 	background-color: #3399FF;
-	/* box-shadow: inset 0 0 100px rgba(0,0,0,.2); */
+	box-shadow: inset 0 0 100px rgba(0,0,0,.2);
 
 	/* font-family: 'Open Sans', sans-serif; */
 	font-family: RobotoDraft, sans-serif;
-	color: #FFFFFF;
 
 }
 
@@ -28,6 +27,9 @@ html, body {
 	padding: 0px;
 }
 
+#navbar{
+	background-color: rgba(136,196,254,1);
+}
 #mainContainer {
 	position: relative;
 	min-height: 100%;
@@ -36,6 +38,13 @@ html, body {
 	display: inline;
 }
 
+.navbar-right{
+	margin-right: 10px;
+}
+
+.navbar-brand{
+	color: #FFC300;
+}
 .ngview-container{
 	display: inline;
 } 
@@ -71,16 +80,45 @@ html, body {
 }
 
 .mainSearch{
-	width: 75%;
+	width: 90%;
 	vertical-align: middle;
-	display: table-cell;
-	margin-left: 12.5%;
+	margin-left: 5%;
 	margin-right: auto;
 	margin-top: 5%;
+	background-color: rgba(255,255,255,.1);
+	color: white;
 }
 
+.mainSearchLine{
+	width: 50%;
+	height: 40px;
+	margin-left: 25%;
+	color: white;
+	dispay: table;
+}
+
+.mainSearchBox{
+	margin: auto;
+
+}
+#dropdownBox{
+	float: left;
+}
+
+#inputBox{
+	height:100%;
+	margin-right: 50px;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#searchButton{
+	background-color: white;
+	margin-left: 10px;
+	height: 75%;
+}
 .bottlecapShowcase{
-	margin-top: 5%;
+	color: white;
 }
 
 .bottlecapCircleContainer{
@@ -91,16 +129,27 @@ html, body {
 	height: 200px;
 }
 
+#bottlecapLabel_showcase{
+	background-color: rgba(255,255,255,.2);
+	border-radius: 5px;
+	padding-left: 10px;
+}
+
 .bottlecapCircle{
 	border-radius: 50%;
 	margin: auto;
 	vertical-align: middle;
-	width: 160px;
-	height: 160px;
+	width: 150px;
+	height: 150px;
 	/*background-color: white; */
 }
 
 #newUserContainer, #loginContainer {
 	margin-top: 150px;
 	padding-top: 15px;
+}
+
+#singleCapPanel{
+	width: 90%;
+	height: 50%;
 }

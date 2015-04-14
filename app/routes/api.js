@@ -16,6 +16,9 @@ module.exports = function(app, express) {
 	apiRouter.route('/bottlecaps')
 		.get(capRoutes.getBottlecaps);
 
+	apiRouter.route('/bottlecaps/:cap_id')
+		.get(capRoutes.getOneCap);
+
 	apiRouter.post('/authenticate', function(req, res){
 
 	User.findOne({
@@ -102,7 +105,6 @@ apiRouter.use(function(req, res, next){
 		//.post(userRoutes.postUsers)
 		.get(userRoutes.getUsers);
 
-	
 	apiRouter.route('/bottlecaps')
 		//.get(capRoutes.getBottlecaps)
 		.post(capRoutes.postBottlecap);

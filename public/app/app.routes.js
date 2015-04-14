@@ -21,16 +21,16 @@ angular.module('app.routes', ['ngRoute'])
             controllerAs: 'newUser'
         })
 
-        /*.when('/profile', {
-            templateUrl: '../views/profile.html',
-            controller: 'profileController',
-            controllerAs: 'profile'
-        })*/
-
         .when('/profile/:user_username', {
             templateUrl: '../views/profile.html',
             controller: 'profileController',
             controllerAs: 'profile'
+        })
+
+        .when('/caps/:cap_id', {
+            templateUrl: '../views/capDetail.html',
+            controller: 'capDetailController',
+            controllerAs: 'cap'
         })
 
         .when('/login', {

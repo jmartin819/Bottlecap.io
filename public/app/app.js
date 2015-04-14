@@ -5,7 +5,8 @@ angular.module('mainApp', [
   'authService',
   'mainCtrl',
   'userService',
-  'ngAnimate'
+  'ngAnimate',
+  'capsService'
   ])
 
 .config(function($httpProvider){
@@ -16,11 +17,9 @@ angular.module('mainApp', [
   $resourceProvider.defaults.stripTrailingSlashes = false;
 }])
 
-.controller('profileController', function(Auth, $location, $routeParams, userFactory){
+.controller('profileController', function($routeParams, userFactory){
   var vm = this;
 
-  vm.profileCheck = Auth.isLoggedIn();
-  console.log(vm.profileCheck);
     userFactory.get($routeParams.user_username)
     .success(function(data){
       vm.user = data;
@@ -49,4 +48,16 @@ angular.module('mainApp', [
     });
 
   }
+})
+
+.controller('capDetailController', function($routeParams, capsFactory){
+
+  var vm = this;
+
+  capsFactory.getOneCap($routeParams.cap_id)
+    .success(function(data){
+      vm.bottlecap = data;
+
+      console.log(vm.bottlecap);
+    });
 });
