@@ -96,3 +96,30 @@ exports.likeCap = function(req, res){
 
 	});
 };
+
+exports.postComment = function(req, res){
+
+	User.findOne({username: req.params.user_username}, function(err,user){
+		if (err) return res.send(err);
+
+		var tempComment = {};
+
+		tempComment.commentBody = req.body.commentBody;
+		tempComment.dateSubmitted = req.body.dateSubmitted;
+		tempComment.cap = req.body.cap;
+
+		console.log("tempComment: ");
+		console.log(tempComment);
+
+		user.comments.push(tempComment);
+
+		user.save(function(err) {
+		if(err)	return res.send(err);
+
+		res.json({ message: 'Comment posted!' });
+		});
+
+		
+
+	});
+};

@@ -13,9 +13,7 @@ var UserSchema = new Schema({
 	follows: [],
 	capLikes: [],
 	comments: [{
-		body: {type: String, required: true},
-		date: {type: Date, required: true},
-		cap: {type: String, required: true}
+		commentID: { type: Schema.ObjectId }
 	}]
 });
 

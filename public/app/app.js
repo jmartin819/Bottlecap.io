@@ -6,7 +6,8 @@ angular.module('mainApp', [
   'mainCtrl',
   'userService',
   'ngAnimate',
-  'capsService'
+  'capsService',
+  'commentService'
   ])
 
 .config(function($httpProvider){

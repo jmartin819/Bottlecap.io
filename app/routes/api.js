@@ -8,6 +8,7 @@ var Bottlecap = require('../models/bottlecap')
 
 var userRoutes = require('./userRoutes');
 var capRoutes =  require('./capRoutes');
+var commentRoutes = require('./commentRoutes');
 
 module.exports = function(app, express) {
 	var apiRouter = express.Router();
@@ -109,6 +110,10 @@ apiRouter.use(function(req, res, next){
 		//.get(capRoutes.getBottlecaps)
 		.post(capRoutes.postBottlecap);
 
+	apiRouter.route('/comments')
+		.get(commentRoutes.getComments)
+		.post(commentRoutes.postComment);
+
 	apiRouter.route('/users/:user_username')
 		.get(userRoutes.getOneUser);
 
@@ -117,6 +122,9 @@ apiRouter.use(function(req, res, next){
 
 	apiRouter.route('/users/:user_username/likeCap')
 		.put(userRoutes.likeCap);
+
+	apiRouter.route('/users/:user_username/postComment')
+		.post(userRoutes.postComment);
 
 	apiRouter.route('/me').get(function(req,res){
 		res.send(req.decoded);
