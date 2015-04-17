@@ -85,7 +85,6 @@ html, body {
 	margin-left: 5%;
 	margin-right: auto;
 	margin-top: 5%;
-	background-color: rgba(255,255,255,.1);
 	color: white;
 }
 
@@ -116,8 +115,9 @@ html, body {
 #inputBox{
 	height:100%;
 	margin-right: 50px;
-	display: table-cell;
-	vertical-align: middle;
+	padding: 5px;
+	/*display: table-cell;
+	vertical-align: middle;*/
 }
 
 #searchButton{
@@ -138,7 +138,6 @@ html, body {
 }
 
 #bottlecapLabel_showcase{
-	background-color: rgba(255,255,255,.2);
 	border-radius: 5px;
 	padding-left: 10px;
 }
@@ -167,4 +166,13 @@ html, body {
 
 #newCommentBox {
 	margin-top: 10px;
+}
+
+.profileContainer, .capDetailContainer {
+	color: white;
+}
+
+a { 
+	color: white; 
+	text-decoration: underline;
 }
