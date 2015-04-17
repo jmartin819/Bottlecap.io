@@ -20,6 +20,10 @@ angular.module('userService', [])
 		return $http.get('/api/users/' + username);
 	};
 
+	localUserFactory.getOneUserById = function(user_id){
+		return $http.get('/api/users/' + user_id);
+	};
+
 	localUserFactory.addFollower = function(curUser, username){
 		username = {username: username};
 		return $http.put('/api/users/' + curUser + '/addFollower', username);

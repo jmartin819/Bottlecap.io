@@ -29,7 +29,7 @@
       </thead>
       <tbody>
         <tr ng-repeat="comment in profile.comments">
-          <td>{{comment.cap}}</td>
+          <td><a ng-href="/caps/{{comment.cap}}">{{comment.cap}}</a></td>
           <td>{{comment.commentBody}}</td>
         </tr>
       </tbody>

@@ -39,6 +39,16 @@ exports.getOneUser = function(req,res){
 	});
 };
 
+exports.getOneUserById = function(req,res){
+	console.log("in here");
+	console.log(req.params.user_id);
+	User.findById(req.params.user_id, function(err, user){
+		if (err) return res.send(err);
+
+		res.json(user);
+	});
+};
+
 exports.addFollower = function(req, res){
 	User.findOne({username: req.params.user_username}, function(err,user){
 		if (err) return res.send(err);
