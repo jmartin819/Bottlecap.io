@@ -3,18 +3,19 @@
     <img height="50" width="50" src="../assets/img/logo_main_edit.png"/>
   </div>
   <div class="input-group mainSearchLine">
-      <form ng-submit="main.searchSubmit()">
-        <div class="searchSelect" >
-        Search by: 
-          <select id="selectionBox" ng-model="main.searchSelection" ng-options="option.lookupCode as option.description for option in main.lookup_options">
-          </select>
-        </div>
+    <form ng-submit="main.searchSubmit()">
+      <div class="searchSelect"> Search by: 
+        <select id="selectionBox" ng-model="main.searchSelection" ng-options="option.lookupCode as option.description for option in main.lookup_options">
+        </select>
+      </div>
+      <div class="input-group">
         <input id="inputBox" ng-model="main.searchText" type="text" name="searchText" class="form-control" placeholder="Enter search">
-          <span id="searchButton" class="input-group-btn">
-            <button class="btn" type="submit">Go!</button>
-          </span>
-      </form>
-    </div><!-- /input-group -->
+        <span id="searchButton" class="input-group-btn">
+          <button class="btn" type="submit">Go!</button>
+        </span>
+      </div>
+    </form>
+  </div><!-- /input-group -->
 
   <div class="searchResults">
   <h1 id="searchResultsHeader">Search Results</h1>

@@ -13,7 +13,7 @@ angular.module('searchController', [
 	var searchBy = $routeParams.searchby;
 	
 	if(searchBy == "user"){
-		if(typeof(searchString) == "undefined"){
+		if(typeof(searchString) == "undefined" || searchString == ""){
 			userFactory.all()
 				.success(function(data){
 				vm.searchResults  = data;
@@ -27,7 +27,7 @@ angular.module('searchController', [
 		}
 	}
 	else if(searchBy == "capColor"){
-		if(typeof(searchString) == "undefined"){
+		if(typeof(searchString) == "undefined" || searchString == ""){
 			capsFactory.all()
 				.success(function(data){
 				vm.searchResults  = data;
@@ -41,7 +41,7 @@ angular.module('searchController', [
 		}
 	}
 	else if(searchBy == "beer"){
-		if(typeof(searchString) == "undefined"){
+		if(typeof(searchString) == "undefined" || searchString == ""){
 			capsFactory.all()
 				.success(function(data){
 				vm.searchResults  = data;
