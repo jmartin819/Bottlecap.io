@@ -23,8 +23,9 @@
         <td>
           <div class="col-sm-2 bottlecapCircleContainer">
             <a ng-href="/caps/{{result._id}}" style="display: block;">
-              <h4 id="bottlecapLabel_showcase" ng-style="main.setCapColor(result)" >{{result.beername}}</h4>
-              <div class="bottlecapCircle" ng-style="main.setCapCircleColor(result)" >
+              <h4 id="bottlecapLabel_showcase">{{result.beername}}</h4>
+              <div class="bottlecapCircle">
+                <div class="bottlecapCircleInner" ng-style="main.setCapCircleColor(result)" >
               </div>
             </a>
           </div>

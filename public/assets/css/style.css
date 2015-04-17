@@ -79,6 +79,17 @@ html, body {
 	margin-right: auto;
 }
 
+.logoByline{
+	color:white;
+	width: 100%;
+}
+
+.logoByline > h2 {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .mainSearch{
 	width: 90%;
 	vertical-align: middle;
@@ -156,12 +167,26 @@ html, body {
 }
 
 .bottlecapCircle{
+	/* background-color: white; */
+	border: dashed;
 	border-radius: 50%;
 	margin: auto;
 	vertical-align: middle;
 	width: 150px;
 	height: 150px;
-	/*background-color: white; */
+
+}
+
+.bottlecapCircleInner{
+
+	border-radius: 50%;
+	margin-top: 2px;
+	margin-left: auto;
+	margin-right: auto;
+	vertical-align: middle;
+	width: 140px;
+	height: 140px;
+
 }
 
 #newUserContainer, #loginContainer {
