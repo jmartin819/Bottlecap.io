@@ -20,6 +20,12 @@ module.exports = function(app, express) {
 	apiRouter.route('/bottlecaps/:cap_id')
 		.get(capRoutes.getOneCap);
 
+	apiRouter.route('/comments/:cap_id/byCap')
+		.get(commentRoutes.getComments_byCap);
+
+	apiRouter.route('/users/:user_id/byId')
+		.get(userRoutes.getOneUserById);
+
 	apiRouter.post('/authenticate', function(req, res){
 
 	User.findOne({
@@ -117,14 +123,8 @@ apiRouter.use(function(req, res, next){
 	apiRouter.route('/comments/:user_id/byUser')
 		.get(commentRoutes.getComments_byUser);
 
-	apiRouter.route('/comments/:cap_id/byCap')
-		.get(commentRoutes.getComments_byCap);
-
 	apiRouter.route('/users/:user_username')
 		.get(userRoutes.getOneUser);
-
-	apiRouter.route('/users/:user_id/byId')
-		.get(userRoutes.getOneUserById);
 
 	apiRouter.route('/users/:user_username/addFollower')
 		.put(userRoutes.addFollower);
