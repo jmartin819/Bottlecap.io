@@ -185,7 +185,22 @@ html, body {
 	color: white;
 }
 
-a { 
+.profileContainer > a { 
+	color: white; 
+	text-decoration: underline;
+}
+
+.capDetailContainer > a { 
+	color: white; 
+	text-decoration: underline;
+}
+
+td > a {
+	color: white; 
+	text-decoration: underline;
+}
+
+div > a {
 	color: white; 
 	text-decoration: underline;
 }

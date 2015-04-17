@@ -1,39 +1,16 @@
 <div class="belowNav capDetailContainer">
-  <div style="float: left;">
-    <img height="50" width="50" src="../assets/img/logo_main_edit.png"/>
-  </div>
-  <div class="col-lg-10 mainSearch">
-      <div id="dropdownBox" class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-          Dropdown
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-        </ul>
-      </div>
-    <div class="input-group mainSearchLine">
-      <input id="inputBox" type="text" class="form-control" placeholder="Search for bottlecap">
-      <span id="searchButton" class="input-group-btn">
-        <button class="btn" type="button">Go!</button>
-      </span>
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg- -->
 
   <div id="singleCapPanel">
 
   <h1>
-    {{cap.bottlecap.beername}}
+    Beer: {{cap.bottlecap.beername}}
     <button ng-click="cap.likeCap(main.user.username, cap.bottlecap._id)" class="btn btn-default">
       <i class="fa fa-thumbs-up">Like</i>
     </button>
   </h1>
 
-  <h4>{{cap.bottlecap.beerdate}}</h4>
-  <h4>{{cap.bottlecap.avgColor}}</h4>
+  <h4>BeerDate: {{cap.bottlecap.beerdate}}</h4>
+  <h4>RGB Color: {{cap.bottlecap.avgColor}}</h4>
 
   <div ng-repeat="comment in cap.comments">
     <a ng-href="/profile/{{comment.user.username}}">{{comment.user.username}}</a>: "{{comment.commentBody}}"
