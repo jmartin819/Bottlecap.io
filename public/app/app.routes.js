@@ -53,9 +53,7 @@ angular.module('app.routes', ['ngRoute'])
         })
 
         .otherwise({
-            templateUrl: '../views/404.html',
-            controller: 'lostController',
-            controllerAs: 'lost'
+            templateUrl: '../views/404.html'
         });
     
 });
