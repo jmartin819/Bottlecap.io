@@ -37,6 +37,22 @@
     {{comment.user}}: "{{comment.commentBody}}"
   </div>
 
+  <div id="newCommentBox" class="jumbotron row col-sm-6 col-sm-offset-3">
+    <h2 class="dark-grey text-center">New Comment</h2>
+
+    <form class="form" ng-submit="cap.postNewComment(main.user.username)">
+      <div class="form-group col-lg-8">
+        <textarea rows="4" cols="75" class="form-control" placeholder="Comment...." ng-model="cap.newComment.commentBody"></textarea>
+      </div>
+      
+      <div class="form-group text-center"> 
+      <button type="submit" class="btn btn-success">Post Comment</button>
+      </div>
+    </form>
+    
+  </div>
+
+
   </div>
 
 </div>

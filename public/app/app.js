@@ -82,6 +82,25 @@ angular.module('mainApp', [
     console.log(vm.comments);
   });
 
+  vm.postNewComment = function(curUser){
+    vm.newComment.cap_id = $routeParams.cap_id;
+
+    userFactory.get(curUser)
+    .success(function(data){
+      console.log(data);
+      vm.newComment.user_id = data._id;
+      console.log(vm.newComment);
+
+      commentFactory.create(vm.newComment)
+      .success(function(data){
+
+        vm.newComment = {};
+        console.log('Comment posted.');
+      });
+
+    });
+  }
+
   vm.likeCap = function(curUser, cap_id){
     vm.currentUser = curUser;
     vm.likedCap = cap_id;
