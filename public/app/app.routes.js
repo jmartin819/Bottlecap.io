@@ -53,7 +53,9 @@ angular.module('app.routes', ['ngRoute'])
         })
 
         .otherwise({
-            redirectTo: '/login'
+            templateUrl: '../views/404.html',
+            controller: 'lostController',
+            controllerAs: 'lost'
         });
     
 });
