@@ -37,7 +37,7 @@
   <h4>{{cap.bottlecap.avgColor}}</h4>
  
   <div ng-repeat="comment in cap.comments">
-    {{comment.user}}: "{{comment.commentBody}}"
+    <div ng-repeat="user in cap.commentPosters track by $index"> {{user}}</div>{{comment.user}}: "{{comment.commentBody}}"
   </div>
 
   <div id="newCommentBox" class="jumbotron row col-sm-6 col-sm-offset-3">

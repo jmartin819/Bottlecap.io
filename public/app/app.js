@@ -80,6 +80,19 @@ angular.module('mainApp', [
   .success(function(data){
     vm.comments = data;
     console.log(vm.comments);
+    vm.commentPosters = [];
+
+    for (i=0; i < vm.comments.length; i++)
+    {
+      userFactory.getOneUserById(vm.comments[i].user)
+      .success(function(data){
+        console.log(data.username);
+        //console.log(vm.comments[i].commentBody);
+        //vm.commentPosters.push({data.username : vm.comments[i].commentBody});
+        //console.log(vm.commentPosters);
+      });
+    }
+
   });
 
   vm.postNewComment = function(curUser){
@@ -100,7 +113,6 @@ angular.module('mainApp', [
         commentFactory.getByCap($routeParams.cap_id)
         .success(function(data){
           vm.comments = data;
-          console.log(vm.comments);
         });
 
       });
