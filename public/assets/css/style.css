@@ -97,9 +97,17 @@ html, body {
 	dispay: table;
 }
 
+.searchSelect{
+	float: left;
+	height: 100%;
+	display: table-cell;
+	vertical-align: middle;
+}
+#selectionBox{
+	color: black;
+}
 .mainSearchBox{
 	margin: auto;
-
 }
 #dropdownBox{
 	float: left;

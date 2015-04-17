@@ -3,6 +3,7 @@
     <img src="../assets/img/logo_main_edit.png"/>
   </div>
   <div class="col-lg-10 mainSearch">
+      <!--
       <div id="dropdownBox" class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
           Search for...
@@ -14,11 +15,21 @@
           <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Users</a></li>
         </ul>
       </div>
+      -->
+      <div class="searchSelect" >
+      Search by: 
+        <select id="selectionBox" ng-model="main.searchSelection" ng-options="option.lookupCode as option.description for option in main.lookup_options">
+
+        </select>
+      </div>
+
     <div class="input-group mainSearchLine">
-      <input id="inputBox" type="text" class="form-control" placeholder="Search for bottlecap">
-      <span id="searchButton" class="input-group-btn">
-        <button class="btn" type="button">Go!</button>
-      </span>
+      <form ng-submit="main.searchSubmit(main.searchText)">
+        <input id="inputBox" ng-model="searchText" type="text" name="searchText" class="form-control" placeholder="Enter search">
+          <span id="searchButton" class="input-group-btn">
+            <button class="btn" type="submit">Go!</button>
+          </span>
+      </form>
     </div><!-- /input-group -->
   </div><!-- /.col-lg-10 -->
 

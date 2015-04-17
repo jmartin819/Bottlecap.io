@@ -22,6 +22,14 @@ angular.module('mainCtrl', [
 
 	//var bottlecapsList = [];
 
+	vm.searchSelection = "";
+
+	vm.lookup_options = [
+		{'lookupCode': 'beer', 'description' : 'Beer'},
+		{'lookupCode': 'capColor', 'description' : 'Cap Color'},
+		{'lookupCode': 'user', 'description' : 'Users'}
+	];
+
 	capsFactory.all()
 		.success(function(data){
 			vm.bottlecapsList = data;
@@ -36,6 +44,11 @@ angular.module('mainCtrl', [
 			
 		});
 	//console.log(vm.bottlecapsList);
+
+	vm.searchSubmit = function(searchText){
+		console.log(vm.searchText);
+		console.log(searchText);
+	};
 
 	vm.setCapColor = function(color){
 		//console.log("call to set color");
