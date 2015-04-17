@@ -96,6 +96,13 @@ angular.module('mainApp', [
 
         vm.newComment = {};
         console.log('Comment posted.');
+
+        commentFactory.getByCap($routeParams.cap_id)
+        .success(function(data){
+          vm.comments = data;
+          console.log(vm.comments);
+        });
+
       });
 
     });
