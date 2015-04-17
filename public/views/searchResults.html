@@ -21,7 +21,7 @@
   <h1 id="searchResultsHeader">Search Results</h1>
     <table class="table">
       <tr ng-repeat="result in search.searchResults">
-        <td>
+        <td ng-if="!search.isUser">
           <div class="col-sm-2 bottlecapCircleContainer">
             <a ng-href="/caps/{{result._id}}" style="display: block;">
               <h4 id="bottlecapLabel_showcase">{{result.beername}}</h4>
@@ -30,7 +30,13 @@
               </div>
             </a>
           </div>
-
+        </td>
+        <td ng-if="search.isUser">
+          <div class="col-sm-2">
+            <a ng-href="/profile/{{result.username}}">
+              <h4 id="bottlecapLabel_showcase">{{result.username}}</h4>
+            </a>
+          </div>
         </td>
       </tr>
     </table>

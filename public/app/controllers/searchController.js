@@ -17,12 +17,14 @@ angular.module('searchController', [
 			userFactory.all()
 				.success(function(data){
 				vm.searchResults  = data;
+				vm.isUser = true;
 			});
 		}
 		else{
 		searchFactory.searchByUsers(searchString)
 			.success(function(data){
 				vm.searchResults  = data;
+				vm.isUser = true;
 			});
 		}
 	}
