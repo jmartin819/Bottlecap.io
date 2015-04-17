@@ -1,4 +1,4 @@
-<div class="belowNav container" ng-cloak>
+<div class="belowNav container profileContainer" ng-cloak>
   <h1>User: {{profile.user.username}}</h1>
 
   <div>
@@ -23,13 +23,13 @@
     <table class="table borderless">
       <thead>
         <tr>
-          <th>Cap</th>
-          <th>Comment</th>
+          <th class="col-lg-3">Cap</th>
+          <th class="col-lg-7">Comment</th>
         </tr>
       </thead>
       <tbody>
         <tr ng-repeat="comment in profile.comments">
-          <td><a ng-href="/caps/{{comment.cap}}">{{comment.cap}}</a></td>
+          <td><a ng-href="/caps/{{comment.cap._id}}">{{comment.cap.beername}}</a></td>
           <td>{{comment.commentBody}}</td>
         </tr>
       </tbody>

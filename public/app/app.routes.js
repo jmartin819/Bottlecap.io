@@ -50,6 +50,10 @@ angular.module('app.routes', ['ngRoute'])
             templateUrl: '../views/home.html',
             controller : 'mainController',
             controllerAs : 'main'
+        })
+
+        .otherwise({
+            templateUrl: '../views/404.html'
         });
     
 });

@@ -67,7 +67,7 @@
 			<!-- Navbar-->
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a ng-href="/profile/{{main.user.username}}"><i class="fa fa-user"></i> Profile </a></li>		
+					<li ng-if="main.loggedIn"><a ng-href="/profile/{{main.user.username}}"><i class="fa fa-user"></i> Profile </a></li>		
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li ng-if="!main.loggedIn"><a href="/login"><i class="fa fa-user"></i> Sign In</a></li>

@@ -1,4 +1,4 @@
-<div class="belowNav">
+<div class="belowNav capDetailContainer">
   <div style="float: left;">
     <img height="50" width="50" src="../assets/img/logo_main_edit.png"/>
   </div>
@@ -23,23 +23,24 @@
     </div><!-- /input-group -->
   </div><!-- /.col-lg- -->
 
-  <div id="singleCapPanel" class="panel panel-default">
+  <div id="singleCapPanel">
 
-  <h1>{{cap.bottlecap.beername}}</h1>
-
-  <div>
+  <h1>
+    {{cap.bottlecap.beername}}
     <button ng-click="cap.likeCap(main.user.username, cap.bottlecap._id)" class="btn btn-default">
-      <span>Like (y)</span>
+      <i class="fa fa-thumbs-up">Like</i>
     </button>
-  </div>
+  </h1>
 
   <h4>{{cap.bottlecap.beerdate}}</h4>
   <h4>{{cap.bottlecap.avgColor}}</h4>
- 
-  <div ng-repeat="comment in cap.comments">
-    <div ng-repeat="user in cap.commentPosters"></div>{{comment.user.username}}: "{{comment.commentBody}}"
-  </div>
 
+  <div ng-repeat="comment in cap.comments">
+    <a ng-href="/profile/{{comment.user.username}}">{{comment.user.username}}</a>: "{{comment.commentBody}}"
+  </div>
+ 
+  <!--<div ng-repeat="user in cap.commentPosters"><a ng-href="/profile/{{comment.user.username}}">{{comment.user.username}}</a>: "{{comment.commentBody}}" </div>
+-->
   <div id="newCommentBox" class="jumbotron row col-sm-6 col-sm-offset-3">
     <h2 class="dark-grey text-center">New Comment</h2>
 

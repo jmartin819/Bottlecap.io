@@ -2,7 +2,7 @@ angular.module('mainCtrl', [
 	'capsService'
 	])
 
-.controller('mainController', function($rootScope, $location, Auth, capsFactory){
+.controller('mainController', function($rootScope, $location, Auth, capsFactory, $window){
 	var vm = this;
 
 	vm.loggedIn = Auth.isLoggedIn();
@@ -108,6 +108,7 @@ angular.module('mainCtrl', [
 	vm.doLogout = function() {
 		Auth.logout();
 		$location.path('/');
+		$window.location.reload();
 	};
 
 });
