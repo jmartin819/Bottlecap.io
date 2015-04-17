@@ -53,7 +53,7 @@ exports.getComments = function(req, res){
 
 exports.getComments_byCap = function(req, res){
 
-	Comment.find(function(err, comments){
+	Comment.find({ cap: ObjectId(req.params.cap_id) }, function(err, comments){
 		if(err) res.send(err);
 
 		res.json(comments);
