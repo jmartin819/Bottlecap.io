@@ -15,6 +15,13 @@ angular.module('app.routes', ['ngRoute'])
             controllerAs: 'main'
         })
 
+        .when('/searchResults', {
+
+            templateUrl: '../views/searchResults.html',
+            controller: 'mainController',
+            controllerAs: 'search'
+        })
+
         .when('/newUser', {
             templateUrl: '../views/newUser.html',
             controller: 'newUserController',
