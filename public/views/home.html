@@ -2,6 +2,7 @@
   <div class="mainLogo">
     <img width="300px" src="../assets/img/logo_main_edit.png"/>
   </div>
+  <div class="col-lg-10 logoByline"><h2> Design your very own bottlecap table or surface</h2></div>
   <div class="col-lg-10 mainSearch">
       <!--
       <div id="dropdownBox" class="dropdown">
@@ -37,9 +38,11 @@
   <div class="col-sm-12 bottlecapShowcase">
   <h1>Most Popular Bottlecaps</h1>
     <div ng-repeat="(key, capData) in main.bottlecapsList" class="col-sm-2 bottlecapCircleContainer">
-    <a ng-href="/caps/{{capData._id}}" style="display: block;">
-      <h4 id="bottlecapLabel_showcase" ng-style="main.setCapColor(capData)" >{{capData.beername}}</h4>
-      <div class="bottlecapCircle" ng-style="main.setCapCircleColor(capData)" >
+    <a ng-href="/caps/{{capData._id}}">
+      <h4 id="bottlecapLabel_showcase" >{{capData.beername}}</h4>
+      <div class="bottlecapCircle">
+        <div class="bottlecapCircleInner" ng-style="main.setCapCircleColor(capData)" >
+        </div>
       </div>
     </a>
     </div>
