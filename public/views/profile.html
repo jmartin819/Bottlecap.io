@@ -28,13 +28,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Budweiser</td>
-          <td>Perfect dark red for my project.</td>
-        </tr>
-        <tr>
-          <td>Bud Light</td>
-          <td>Great blue to use for water.</td>
+        <tr ng-repeat="comment in profile.user.comments">
+          <td>{{comment}}</td>
+          <td>{{comment.commentBody}}</td>
         </tr>
       </tbody>
     </table>
