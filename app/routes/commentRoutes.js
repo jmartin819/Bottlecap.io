@@ -53,7 +53,7 @@ exports.getComments = function(req, res){
 
 exports.getComments_byCap = function(req, res){
 
-	Comment.find({ cap: ObjectId(req.params.cap_id) }, function(err, comments){
+	Comment.find({ cap: ObjectId(req.params.cap_id) }).populate('user').exec(function(err, comments){
 		if(err) res.send(err);
 
 		res.json(comments);
@@ -63,7 +63,7 @@ exports.getComments_byCap = function(req, res){
 exports.getComments_byUser = function(req, res){
 
 	//console.log("req.params.cap_id");
-	Comment.find( { user: ObjectId(req.params.user_id) }, function(err, comments){
+	Comment.find( { user: ObjectId(req.params.user_id)}).populate('cap').exec(function(err, comments){
 		if(err) res.send(err);
 
 		res.json(comments);

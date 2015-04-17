@@ -5,6 +5,7 @@ var superSecret = config.secret;
 
 var User = require('../models/user');
 var Bottlecap = require('../models/bottlecap')
+var Comment = require('../models/comment')
 
 var userRoutes = require('./userRoutes');
 var capRoutes =  require('./capRoutes');
