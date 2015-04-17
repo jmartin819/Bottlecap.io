@@ -9,7 +9,9 @@ var BottlecapSchema = new Schema({
 	beerdate: { type: String, required: true},
 	dateCreated: {type: String, required: true},
 	avgColor: { type: String, required: true},
-	commentID: {type: Schema.ObjectId}
+	commentID: [{
+		commentID: { type: Schema.ObjectId }
+	}]
 });
 
 // return the model

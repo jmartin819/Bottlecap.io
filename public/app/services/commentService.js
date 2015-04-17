@@ -19,6 +19,14 @@ angular.module('commentService', [])
 		return $http.post('/api/comments', commentData);
 	};
 
+	localCommentFactory.getByCap = function(cap_id){
+		return $http.get('/api/comments/' + cap_id + '/byCap');
+	}
+
+	localCommentFactory.getByUser = function(user_id){
+		return $http.get('/api/comments/' + user_id + '/byUser');
+	}
+
 	return localCommentFactory;
 
 });

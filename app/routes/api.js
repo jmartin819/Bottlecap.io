@@ -123,6 +123,9 @@ apiRouter.use(function(req, res, next){
 	apiRouter.route('/users/:user_username')
 		.get(userRoutes.getOneUser);
 
+	apiRouter.route('/users/:user_id')
+		.get(userRoutes.getOneUserById);
+
 	apiRouter.route('/users/:user_username/addFollower')
 		.put(userRoutes.addFollower);
 

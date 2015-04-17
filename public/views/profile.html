@@ -23,18 +23,14 @@
     <table class="table borderless">
       <thead>
         <tr>
-          <th>Beer</th>
+          <th>Cap</th>
           <th>Comment</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Budweiser</td>
-          <td>Perfect dark red for my project.</td>
-        </tr>
-        <tr>
-          <td>Bud Light</td>
-          <td>Great blue to use for water.</td>
+        <tr ng-repeat="comment in profile.comments">
+          <td><a ng-href="/caps/{{comment.cap}}">{{comment.cap}}</a></td>
+          <td>{{comment.commentBody}}</td>
         </tr>
       </tbody>
     </table>
@@ -45,7 +41,7 @@
     <table class="table borderless">
       <thead>
         <tr>
-          <th>Beer</th>
+          <th>Cap</th>
         </tr>
       </thead>
       <tbody>
