@@ -114,6 +114,12 @@ apiRouter.use(function(req, res, next){
 		.get(commentRoutes.getComments)
 		.post(commentRoutes.postComment);
 
+	apiRouter.route('/comments/:user_id/byUser')
+		.get(commentRoutes.getComments_byUser);
+
+	apiRouter.route('/comments/:cap_id/byCap')
+		.get(commentRoutes.getComments_byCap);
+
 	apiRouter.route('/users/:user_username')
 		.get(userRoutes.getOneUser);
 
