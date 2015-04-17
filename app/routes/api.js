@@ -10,6 +10,7 @@ var Comment = require('../models/comment')
 var userRoutes = require('./userRoutes');
 var capRoutes =  require('./capRoutes');
 var commentRoutes = require('./commentRoutes');
+var searchRoutes = require('./searchRoutes');
 
 module.exports = function(app, express) {
 	var apiRouter = express.Router();
@@ -20,6 +21,15 @@ module.exports = function(app, express) {
 
 	apiRouter.route('/bottlecaps/:cap_id')
 		.get(capRoutes.getOneCap);
+
+	apiRouter.route('/search/:searchstring/byUser')
+		.get(searchRoutes.searchByUser);
+
+	apiRouter.route('/search/:searchstring/byCap')
+		.get(searchRoutes.searchByCap);
+
+	apiRouter.route('/search/:searchstring/byColor')
+		.get(searchRoutes.searchByColor);
 
 	apiRouter.post('/authenticate', function(req, res){
 

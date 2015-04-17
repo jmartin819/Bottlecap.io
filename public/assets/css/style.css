@@ -103,6 +103,19 @@ html, body {
 	display: table-cell;
 	vertical-align: middle;
 }
+
+.searchResults{
+	color: white;
+	width: 95%;
+	margin-top: 5%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#searchResultsHeader{
+	color: white;
+	border-bottom: 1px white dashed;
+}
 #selectionBox{
 	color: black;
 }

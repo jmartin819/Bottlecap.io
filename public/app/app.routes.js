@@ -18,7 +18,7 @@ angular.module('app.routes', ['ngRoute'])
         .when('/searchResults', {
 
             templateUrl: '../views/searchResults.html',
-            controller: 'mainController',
+            controller: 'searchController',
             controllerAs: 'search'
         })
 

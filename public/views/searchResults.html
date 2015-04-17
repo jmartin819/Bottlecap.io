@@ -2,37 +2,34 @@
   <div style="float: left;">
     <img height="50" width="50" src="../assets/img/logo_main_edit.png"/>
   </div>
-  <div class="col-lg-10 mainSearch">
-      <div id="dropdownBox" class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-          Dropdown
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-        </ul>
-      </div>
-    <div class="input-group mainSearchLine">
-      <input id="inputBox" type="text" class="form-control" placeholder="Search for bottlecap">
-      <span id="searchButton" class="input-group-btn">
-        <button class="btn" type="button">Go!</button>
-      </span>
+  <div class="input-group mainSearchLine">
+      <form ng-submit="main.searchSubmit()">
+        <div class="searchSelect" >
+        Search by: 
+          <select id="selectionBox" ng-model="main.searchSelection" ng-options="option.lookupCode as option.description for option in main.lookup_options">
+          </select>
+        </div>
+        <input id="inputBox" ng-model="main.searchText" type="text" name="searchText" class="form-control" placeholder="Enter search">
+          <span id="searchButton" class="input-group-btn">
+            <button class="btn" type="submit">Go!</button>
+          </span>
+      </form>
     </div><!-- /input-group -->
-  </div><!-- /.col-lg- -->
 
-  <div>
-    <table class="table table-striped">
-      <tr>
-        <td>Poo</td>
-      </tr>
-      <tr>
-        <td>Poo</td>
-      </tr>
-      <tr>
-        <td>Poo</td>
+  <div class="searchResults">
+  <h1 id="searchResultsHeader">Search Results</h1>
+    <table class="table">
+      <tr ng-repeat="result in search.searchResults">
+        <td>
+          <div class="col-sm-2 bottlecapCircleContainer">
+            <a ng-href="/caps/{{result._id}}" style="display: block;">
+              <h4 id="bottlecapLabel_showcase" ng-style="main.setCapColor(result)" >{{result.beername}}</h4>
+              <div class="bottlecapCircle" ng-style="main.setCapCircleColor(result)" >
+              </div>
+            </a>
+          </div>
+
+        </td>
       </tr>
     </table>
   </div>

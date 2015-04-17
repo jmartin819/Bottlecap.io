@@ -4,6 +4,7 @@ angular.module('mainApp', [
   'app.routes',
   'authService',
   'mainCtrl',
+  'searchController',
   'userService',
   'ngAnimate',
   'capsService',

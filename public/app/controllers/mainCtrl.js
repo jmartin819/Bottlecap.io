@@ -47,11 +47,11 @@ angular.module('mainCtrl', [
 		});
 	//console.log(vm.bottlecapsList);
 
-	vm.searchSubmit = function(searchText){
-		console.log(vm.searchText);
-		console.log(vm.searchSelection);
+	vm.searchSubmit = function(){
+		//console.log(vm.searchText);
+		//console.log(vm.searchSelection);
 
-		$location.path("/searchResults");
+		$location.path("/searchResults").search('searchby', vm.searchSelection).search('searchstring', vm.searchText);
 	};
 
 	vm.setCapColor = function(color){
@@ -62,6 +62,18 @@ angular.module('mainCtrl', [
 		//console.log(vm.bgColor);
 
 		var returnColor = { color: "#" + color.avgColor };
+
+		return returnColor;
+	};
+
+	vm.setCapCircleColor = function(color){
+		//console.log("call to set color");
+		//console.log(color);
+
+		vm.bgColor = "#" + color.avgColor;
+		//console.log(vm.bgColor);
+
+		var returnColor = { "background-color": "#" + color.avgColor };
 
 		return returnColor;
 	};

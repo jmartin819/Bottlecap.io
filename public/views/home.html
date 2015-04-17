@@ -38,7 +38,7 @@
     <div ng-repeat="(key, capData) in main.bottlecapsList" class="col-sm-2 bottlecapCircleContainer">
     <a ng-href="/caps/{{capData._id}}" style="display: block;">
       <h4 id="bottlecapLabel_showcase" ng-style="main.setCapColor(capData)" >{{capData.beername}}</h4>
-      <div class="bottlecapCircle" ng-style="{'background-color': 'white'}" >
+      <div class="bottlecapCircle" ng-style="main.setCapCircleColor(capData)" >
       </div>
     </a>
     </div>
