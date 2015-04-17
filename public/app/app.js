@@ -18,14 +18,21 @@ angular.module('mainApp', [
   $resourceProvider.defaults.stripTrailingSlashes = false;
 }])
 
-.controller('profileController', function($routeParams, userFactory){
+.controller('profileController', function($routeParams, userFactory, commentFactory){
   var vm = this;
 
     userFactory.get($routeParams.user_username)
     .success(function(data){
       vm.user = data;
-      console.log(vm.user.comments);
+
+      commentFactory.getByUser(vm.user._id)
+      .success(function(data){
+        vm.comments = data;
+        console.log("Comments?");
+        console.log(vm.comments);
+      });
     });
+
 
   vm.addFollower = function(curUser, username){
     vm.currentUser = curUser;
@@ -60,16 +67,20 @@ angular.module('mainApp', [
   }
 })
 
-.controller('capDetailController', function($routeParams, capsFactory, userFactory){
+.controller('capDetailController', function($routeParams, capsFactory, userFactory, commentFactory){
 
   var vm = this;
 
   capsFactory.getOneCap($routeParams.cap_id)
-    .success(function(data){
-      vm.bottlecap = data;
+  .success(function(data){
+    vm.bottlecap = data;
+  });
 
-      console.log(vm.bottlecap);
-    });
+  commentFactory.getByCap($routeParams.cap_id)
+  .success(function(data){
+    vm.comments = data;
+    console.log(vm.comments);
+  });
 
   vm.likeCap = function(curUser, cap_id){
     vm.currentUser = curUser;

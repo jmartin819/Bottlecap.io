@@ -23,13 +23,13 @@
     <table class="table borderless">
       <thead>
         <tr>
-          <th>Beer</th>
+          <th>Cap</th>
           <th>Comment</th>
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="comment in profile.user.comments">
-          <td>{{comment}}</td>
+        <tr ng-repeat="comment in profile.comments">
+          <td>{{comment.cap}}</td>
           <td>{{comment.commentBody}}</td>
         </tr>
       </tbody>
@@ -41,7 +41,7 @@
     <table class="table borderless">
       <thead>
         <tr>
-          <th>Beer</th>
+          <th>Cap</th>
         </tr>
       </thead>
       <tbody>

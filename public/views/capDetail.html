@@ -33,6 +33,9 @@
       <span>Like (y)</span>
     </button>
   </div>
+  <div ng-repeat="comment in cap.comments">
+    {{comment.user}}: "{{comment.commentBody}}"
+  </div>
 
   </div>
 
