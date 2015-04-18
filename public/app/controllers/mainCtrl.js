@@ -58,24 +58,26 @@ angular.module('mainCtrl', [
 		//console.log("call to set color");
 		//console.log(color);
 
-		vm.bgColor = "#" + color.avgColor;
-		//console.log(vm.bgColor);
-
-		var returnColor = { color: "#" + color.avgColor };
-
-		return returnColor;
+		if(typeof(color) != "undefined"){
+			vm.bgColor = "#" + color.avgColor;
+			//console.log(vm.bgColor);
+			var returnColor = { color: "#" + color.avgColor };
+			return returnColor;
+		}
 	};
 
 	vm.setCapCircleColor = function(color){
 		//console.log("call to set color");
 		//console.log(color);
 
-		vm.bgColor = "#" + color.avgColor;
-		//console.log(vm.bgColor);
+		if(typeof(color) != "undefined"){
+			vm.bgColor = "#" + color.avgColor;
+			//console.log(vm.bgColor);
 
-		var returnColor = { "background-color": "#" + color.avgColor };
+			var returnColor = { "background-color": "#" + color.avgColor };
 
-		return returnColor;
+			return returnColor;
+		}
 	};
 
 	vm.doLogin = function(){

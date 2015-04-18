@@ -1,36 +1,50 @@
-<div class="belowNav capDetailContainer">
+<div ng-cloak class="belowNav capDetailContainer">
 
   <div id="singleCapPanel">
 
-  <h1>
-    Beer: {{cap.bottlecap.beername}}
-    <button ng-click="cap.likeCap(main.user.username, cap.bottlecap._id)" class="btn btn-default">
-      <i class="fa fa-thumbs-up">Like</i>
-    </button>
+  <h1 id="singleCapHeader">
+    {{cap.bottlecap.beername}} Bottlecap
+    
   </h1>
 
-  <h4>BeerDate: {{cap.bottlecap.beerdate}}</h4>
-  <h4>RGB Color: {{cap.bottlecap.avgColor}}</h4>
+  <button ng-click="cap.likeCap(main.user.username, cap.bottlecap._id)" id="singleCapLikeButton" class="btn btn-default">
+      <i class="fa fa-thumbs-up">Like</i>
+  </button>
 
-  <div ng-repeat="comment in cap.comments">
-    <a ng-href="/profile/{{comment.user.username}}">{{comment.user.username}}</a>: "{{comment.commentBody}}"
+  <div class="bottlecapCircle">
+        <div class="bottlecapCircleInner" ng-style="main.setCapCircleColor(cap.bottlecap)" >
+        </div>
   </div>
- 
-  <!--<div ng-repeat="user in cap.commentPosters"><a ng-href="/profile/{{comment.user.username}}">{{comment.user.username}}</a>: "{{comment.commentBody}}" </div>
--->
-  <div id="newCommentBox" class="jumbotron row col-sm-6 col-sm-offset-3">
-    <h2 class="dark-grey text-center">New Comment</h2>
 
-    <form class="form" ng-submit="cap.postNewComment(main.user.username)">
-      <div class="form-group col-lg-8">
-        <textarea rows="4" cols="75" class="form-control" placeholder="Comment...." ng-model="cap.newComment.commentBody"></textarea>
-      </div>
+  <div class="singleCapDetails">
+
+    <h2>Details</h2>
+
+    <h4>BeerDate: {{cap.bottlecap.beerdate}}</h4>
+    <h4>RGB Color: {{cap.bottlecap.avgColor}}</h4>
+
+    <h2>Comments</h2>
+
+    <div ng-repeat="comment in cap.comments">
+      <a ng-href="/profile/{{comment.user.username}}">{{comment.user.username}}</a>: "{{comment.commentBody}}"
+    </div>
+   
+    <!--<div ng-repeat="user in cap.commentPosters"><a ng-href="/profile/{{comment.user.username}}">{{comment.user.username}}</a>: "{{comment.commentBody}}" </div>
+  -->
+    <div id="newCommentBox" class="jumbotron row col-sm-6 col-sm-offset-3">
+      <h2 class="dark-grey text-center">New Comment</h2>
+
+      <form class="form" ng-submit="cap.postNewComment(main.user.username)">
+        <div class="form-group col-lg-8">
+          <textarea rows="4" cols="75" class="form-control" placeholder="Comment...." ng-model="cap.newComment.commentBody"></textarea>
+        </div>
+        
+        <div class="form-group text-center"> 
+        <button type="submit" class="btn btn-success">Post Comment</button>
+        </div>
+      </form>
       
-      <div class="form-group text-center"> 
-      <button type="submit" class="btn btn-success">Post Comment</button>
-      </div>
-    </form>
-    
+    </div>
   </div>
 
 

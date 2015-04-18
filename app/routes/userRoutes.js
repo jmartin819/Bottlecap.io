@@ -32,7 +32,7 @@ exports.getUsers = function(req, res){
 };
 
 exports.getOneUser = function(req,res){
-	User.findOne({username: req.params.user_username}, function(err, user){
+	User.findOne({username: req.params.user_username}).populate('capLikes').exec(function(err, user){
 		if (err) return res.send(err);
 
 		res.json(user);
