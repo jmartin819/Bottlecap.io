@@ -34,9 +34,7 @@ module.exports = function(app, express) {
 	apiRouter.route('/comments/:cap_id/byCap')
 		.get(commentRoutes.getComments_byCap);
 
-	apiRouter.route('/users')
-		//.post(userRoutes.postUsers)
-		.get(userRoutes.getUsers);
+
 
 	apiRouter.route('/users/:user_id/byId')
 		.get(userRoutes.getOneUserById);
@@ -134,6 +132,10 @@ apiRouter.use(function(req, res, next){
 
 	apiRouter.route('/comments/:user_id/byUser')
 		.get(commentRoutes.getComments_byUser);
+
+	apiRouter.route('/users')
+		//.post(userRoutes.postUsers)
+		.get(userRoutes.getUsers);
 
 	apiRouter.route('/users/:user_username')
 		.get(userRoutes.getOneUser);
