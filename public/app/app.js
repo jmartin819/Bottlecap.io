@@ -26,13 +26,16 @@ angular.module('mainApp', [
     .success(function(data){
       vm.user = data;
 
+      console.log(vm.user.capLikes);
+
       commentFactory.getByUser(vm.user._id)
       .success(function(data){
         vm.comments = data;
-        console.log("Comments?");
-        console.log(vm.comments);
+        //console.log("Comments?");
+        //console.log(vm.comments);
       });
     });
+
 
 
   vm.addFollower = function(curUser, username){
@@ -75,7 +78,7 @@ angular.module('mainApp', [
   capsFactory.getOneCap($routeParams.cap_id)
   .success(function(data){
     vm.bottlecap = data;
-    console.log(vm.bottlecap);
+    //console.log(vm.bottlecap);
   });
 
   commentFactory.getByCap($routeParams.cap_id)

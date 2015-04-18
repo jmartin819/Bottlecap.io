@@ -2,6 +2,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt-nodejs');
+var Bottlecap = require('./bottlecap');
 
 // user schema
 var UserSchema = new Schema({
@@ -11,7 +12,7 @@ var UserSchema = new Schema({
 	username: { type: String, required: true, index: { unique: true }},
 	password: { type: String, required: true, select: false },
 	follows: [],
-	capLikes: [],
+	capLikes: [{ type: Schema.ObjectId, ref: 'Bottlecap'}],
 	comments: [{
 		commentID: { type: Schema.ObjectId }
 	}]
